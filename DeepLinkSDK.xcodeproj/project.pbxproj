@@ -13,6 +13,7 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
+		6657774B1AC2E8B3008CE612 /* DPLProductDeepRouteHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6657774A1AC2E8B3008CE612 /* DPLProductDeepRouteHandler.m */; };
 		68101FFDAAC0A24037B56D22 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19367BAF0FEDE5B798128F3D /* libPods-Tests.a */; };
 		6C18B300BAD926F6461AC49D /* libPods-SenderDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A53B1FA1F6DF1D2B557DCD /* libPods-SenderDemo.a */; };
 		DE025EB11A5F0D37007C4F3A /* DPLProductDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DE025EB01A5F0D37007C4F3A /* DPLProductDataSource.m */; };
@@ -69,6 +70,8 @@
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		665777491AC2E8B3008CE612 /* DPLProductDeepRouteHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPLProductDeepRouteHandler.h; sourceTree = "<group>"; };
+		6657774A1AC2E8B3008CE612 /* DPLProductDeepRouteHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPLProductDeepRouteHandler.m; sourceTree = "<group>"; };
 		6B9E60301031FFD1833ECA7A /* Pods-SenderDemo.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SenderDemo.test.xcconfig"; path = "Pods/Target Support Files/Pods-SenderDemo/Pods-SenderDemo.test.xcconfig"; sourceTree = "<group>"; };
 		81A53B1FA1F6DF1D2B557DCD /* libPods-SenderDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SenderDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8949A4E8F681A12A47C20775 /* DeepLinkSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = DeepLinkSDK.podspec; path = ./DeepLinkSDK.podspec; sourceTree = "<group>"; };
@@ -408,6 +411,8 @@
 			children = (
 				DE87B1EC1A5DEFD400204A35 /* DPLProductRouteHandler.h */,
 				DE87B1ED1A5DEFD400204A35 /* DPLProductRouteHandler.m */,
+				665777491AC2E8B3008CE612 /* DPLProductDeepRouteHandler.h */,
+				6657774A1AC2E8B3008CE612 /* DPLProductDeepRouteHandler.m */,
 			);
 			path = RouteHandlers;
 			sourceTree = "<group>";
@@ -782,6 +787,7 @@
 				DE87B1F51A5E193100204A35 /* DPLProductDetailViewController.m in Sources */,
 				DEAD328A19E079D3003C8D65 /* DPLProductTableViewController.m in Sources */,
 				DE025EB11A5F0D37007C4F3A /* DPLProductDataSource.m in Sources */,
+				6657774B1AC2E8B3008CE612 /* DPLProductDeepRouteHandler.m in Sources */,
 				DE87B1F11A5DF49F00204A35 /* DPLProduct.m in Sources */,
 				DE87B1EE1A5DEFD400204A35 /* DPLProductRouteHandler.m in Sources */,
 				DEAD328D19E079D3003C8D65 /* main.m in Sources */,

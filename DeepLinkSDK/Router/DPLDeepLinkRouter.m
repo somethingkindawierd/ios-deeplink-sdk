@@ -155,11 +155,26 @@
         }
         
         UIViewController *presentingViewController = [routeHandler viewControllerForPresentingDeepLink:deepLink];
-        UIViewController <DPLTargetViewController> *targetViewController = [routeHandler targetViewController];
+        id<DPLTargetViewController> targetViewController;
+        
+        if([routeHandler rendersMultipleTargets]) {
+            targetViewController = [routeHandler targetViewControllersForDeepLink:deepLink];
+        }
+        else {
+            targetViewController = [routeHandler targetViewController];
+        }
         
         if (targetViewController) {
-            [targetViewController configureWithDeepLink:deepLink];
-            [routeHandler presentTargetViewController:targetViewController inViewController:presentingViewController];
+            if([targetViewController respondsToSelector:@selector(configureWithDeepLink:)]) {
+                [targetViewController configureWithDeepLink:deepLink];
+            }
+            
+            if([routeHandler rendersMultipleTargets]) {
+                [routeHandler presentTargetViewControllers:(NSArray<DPLTargetViewController>*)targetViewController inViewController:presentingViewController];
+            }
+            else {
+                [routeHandler presentTargetViewController:(UIViewController<DPLTargetViewController>*)targetViewController inViewController:presentingViewController];
+            }
         }
         else {
             

@@ -4,6 +4,7 @@
 
 @protocol DPLTargetViewController <NSObject>
 
+@optional
 /**
  Implement this method on conforming view controllers to configure it with data
  provided by the passed deep link.

@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "DPLTargetViewControllerProtocol.h"
+#import "NSArray+DPLTargetViewController.h"
 
 @class DPLDeepLink;
 
@@ -33,13 +34,33 @@
  */
 - (BOOL)preferModalPresentation;
 
+/**
+ Should the transition be allowed to animate? Deafults to NO.
+ @return YES if you want the transition to animate, NO otherwise.
+ */
+- (BOOL)shouldAnimate;
+
+/**
+ Does this route render an array of view controllers? Defaults to NO.
+ @return Return YES if returing multiple view controllers, NO otherwise.
+ */
+- (BOOL)rendersMultipleTargets;
+
 
 /**
  The view controller that will be presented as a result of the deep link.
  @return A view controller conforming to the `DPLTargetViewController' protocol.
- @note Subclasses MUST override this method.
+ @note Subclasses MUST override this method if the respond with NO from rendersMultipleTargets.
  */
 - (UIViewController <DPLTargetViewController> *)targetViewController;
+
+/**
+ The view controllers that will be presented as a result of the deep link.
+ @param deepLink The deep link object to be represented.
+ @return An array of view controllers conforming to the `DPLTargetViewController' protocol.
+ @note Subclasses MUST override this method if the respond with YES from rendersMultipleTargets.
+ */
+- (NSArray <DPLTargetViewController> *)targetViewControllersForDeepLink:(DPLDeepLink*)deepLink;
 
 
 /**
@@ -66,6 +87,9 @@
  @param presentingViewController A view controller for presenting a target view controller.
  */
 - (void)presentTargetViewController:(UIViewController <DPLTargetViewController> *)targetViewController
+                   inViewController:(UIViewController *)presentingViewController;
+
+- (void)presentTargetViewControllers:(NSArray <DPLTargetViewController> *)targetViewControllers
                    inViewController:(UIViewController *)presentingViewController;
 
 @end

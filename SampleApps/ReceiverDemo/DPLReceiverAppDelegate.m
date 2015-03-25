@@ -1,5 +1,6 @@
 #import "DPLReceiverAppDelegate.h"
 #import "DPLProductRouteHandler.h"
+#import "DPLProductDeepRouteHandler.h"
 
 #import <DeepLinkSDK/DeepLinkSDK.h>
 
@@ -23,6 +24,7 @@
     
     // Route registration.
     self.router[@"/product/:sku"] = [DPLProductRouteHandler class];
+    self.router[@"/product-deep/:sku"] = [DPLProductDeepRouteHandler class];
     
     self.router[@"/say/:title/:message"] = ^(DPLDeepLink *link) {
         [[[UIAlertView alloc] initWithTitle:link[@"title"]

@@ -16,6 +16,7 @@
     if (self) {
         _actions = @[[self loadBeersAction],
                      [self loadOktoberfestAction],
+                     [self loadBeerDeepAction],
                      [self logHelloWorldAction]];
     }
     return self;
@@ -61,6 +62,17 @@
     DPLDemoAction *action = [[DPLDemoAction alloc] init];
     action.actionURL  = link.URL;
     action.actionName = @"Buy: Shiner Oktoberfest";
+    return action;
+}
+
+
+- (DPLDemoAction *)loadBeerDeepAction {
+    DPLMutableDeepLink *link = [[DPLMutableDeepLink alloc] initWithString:@"dpl://dpl.com"];
+    link.path = @"/product-deep/93522";
+    
+    DPLDemoAction *action = [[DPLDemoAction alloc] init];
+    action.actionURL  = link.URL;
+    action.actionName = @"Buy: Christmas Ale (deep)";
     return action;
 }
 
